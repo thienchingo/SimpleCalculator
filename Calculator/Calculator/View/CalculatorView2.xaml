@@ -110,14 +110,9 @@
                         <TapGestureRecognizer Command="{Binding AddNumber}" CommandParameter="-"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <!--<Label Text="." Grid.Row="4" Grid.Column="1" Padding="20,20" BackgroundColor="MistyRose" FontSize="Body" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
+                <Label Text="." Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2" Padding="68,20" BackgroundColor="MistyRose" FontSize="Body"  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding AddNumber}" CommandParameter="."/>
-                    </Label.GestureRecognizers>
-                </Label>-->
-                <Label Text="," Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2" Padding="68,20"  BackgroundColor="MistyRose" FontSize="Body"  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding AddNumber}" CommandParameter=","/>
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>

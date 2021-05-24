@@ -16,7 +16,6 @@ D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\Cal
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\Calculator.dll
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\ref\Calculator.dll
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\Calculator.pdb
-D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.csprojAssemblyReference.cache
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\View\CalculatorView2.xaml.g.cs
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.AssemblyInfoInputs.cache
@@ -26,3 +25,4 @@ D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Xam
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.dll
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\ref\Calculator.dll
 D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.pdb
+D:\Xamarin\Xamarin\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.csprojAssemblyReference.cache

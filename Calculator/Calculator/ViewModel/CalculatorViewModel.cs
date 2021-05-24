@@ -45,45 +45,56 @@ namespace Calculator.ViewModel
 
         private async void ReturnValue1(object obj)
         {
+            Double result;
             if (ON_OFF == true)
             {
+                
                 switch (Pheptinh)
                 {
                     case "+":
-                        if (TXTBOX1 != "")
-                            TXTBOX2 = (Value + Double.Parse(TXTBOX1)).ToString();
+                        if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                            TXTBOX2 = "="+(Value + result).ToString();
                         break;
                     case "-":
-                        if (TXTBOX1 != "")
-                            TXTBOX2 = (Value - Double.Parse(TXTBOX1)).ToString();
+                        if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                            TXTBOX2 = "=" + (Value - result).ToString();
                         break;
                     case "*":
-                        if (TXTBOX1 != "")
-                            TXTBOX2 = (Value * Double.Parse(TXTBOX1)).ToString();
+                        if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                            TXTBOX2 = "=" + (Value * result).ToString();
                         break;
                     case "/":
-                        if (TXTBOX1 != "")
-                            TXTBOX2 = (Value / Double.Parse(TXTBOX1)).ToString();
+                        if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                            TXTBOX2 = "=" + (Value / result).ToString();
                         break;
                     default:
-                        TXTBOX2 = TXTBOX1;
+                        TXTBOX2 = "=" + TXTBOX1;
                         break;
                 }
                 Check = false;
-                Value = Double.Parse(TXTBOX2);
+                if (Double.TryParse(TXTBOX1, out result))
+                    Value = Double.Parse(TXTBOX2.Substring(1));
+                else
+                {
+                    TXTBOX2 = "Errors";
+                    await Task.Delay(1000);
+                    TXTBOX2 = "0";
+                }
+                    
                 TXTBOX1 = "0";
             }
 
             else
             {
                 TXTBOX2 = "Vui lòng bật máy";
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 TXTBOX2 = "0";
             }
         }
 
         private async void Operator1(object obj)
         {
+            Double result;
             if (ON_OFF == true)
             {
                 if (TXTBOX1 != "")
@@ -96,25 +107,32 @@ namespace Calculator.ViewModel
                             switch (Pheptinh)
                             {
                                 case "+":
-                                    Value += Double.Parse(TXTBOX1);
+                                    if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                                        Value += result;
                                     break;
                                 case "-":
-                                    Value -= Double.Parse(TXTBOX1);
+                                    if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                                        Value -= result;
                                     break;
                                 case "*":
-                                    if (Double.Parse(TXTBOX1) > 0)
-                                        Value *= Double.Parse(TXTBOX1);
+                                    if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                                        if (Double.Parse(TXTBOX1) > 0)
+                                        Value *= result;
                                     break;
                                 case "/":
-                                    if (Double.Parse(TXTBOX1) > 0)
-                                        Value /= Double.Parse(TXTBOX1);
+                                    if (TXTBOX1 != "" && Double.TryParse(TXTBOX1, out result))
+                                        if (result != 0)
+                                        Value /= result;
                                     break;
                                 default:
                                     break;
                             }
                         }
                         else
-                            Value = Double.Parse(TXTBOX1);
+                        {
+                            if(Double.TryParse(TXTBOX1, out result))
+                            Value = result;
+                        }    
                         Check = true;
                         TXTBOX2 = Value + " " + Pheptinh;
                         TXTBOX1 = "";
@@ -124,7 +142,7 @@ namespace Calculator.ViewModel
             else
             {
                 TXTBOX2 = "Vui lòng bật máy";
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 TXTBOX2 = "0";
             }
 
@@ -136,7 +154,7 @@ namespace Calculator.ViewModel
             if (ON_OFF == true)
             {
                 TXTBOX1 = "Cancel";
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 Value = 0;
                 TXTBOX1 = "";
                 TXTBOX2 = "0";
@@ -145,7 +163,7 @@ namespace Calculator.ViewModel
             else
             {
                 TXTBOX2 = "Vui lòng bật máy";
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 TXTBOX2 = "0";
             }
 
@@ -162,7 +180,7 @@ namespace Calculator.ViewModel
             else
             {
                 TXTBOX2 = "Vui lòng bật máy";
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 TXTBOX2 = "0";
             }
         }

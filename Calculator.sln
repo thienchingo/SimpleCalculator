@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Android", "Calcu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.iOS", "Calculator\Calculator.iOS\Calculator.iOS.csproj", "{D0401689-CF22-4F0D-9606-A93C0A1D460F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator\Calculator.csproj", "{B0CD2BE0-1226-4BB3-9995-765EE7711574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator\Calculator.csproj", "{B0CD2BE0-1226-4BB3-9995-765EE7711574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
