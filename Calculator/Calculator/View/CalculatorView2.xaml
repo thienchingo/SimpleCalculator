@@ -7,7 +7,8 @@
         <StackLayout BackgroundColor="LightSteelBlue">
             <Label Text="{Binding TXTBOX2}" BackgroundColor="Gray" Margin="0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="10,10,10,10" />
             <Label Text="{Binding TXTBOX1}" BackgroundColor="Gray" Margin="0,-10,0,0" Padding="10,10,10,10" TextColor="Black"/>
-            <Switch  HorizontalOptions="EndAndExpand" VerticalOptions="Center" IsEnabled="True" IsToggled="{Binding ON_OFF}" Margin="0,0,10,0"/>
+            <Label Text="ON/OFF" HorizontalOptions="End" Margin="0,10,40,0" Padding="10,10,10,10"  TextColor="Black"/>
+            <Switch  HorizontalOptions="EndAndExpand" VerticalOptions="Center" IsEnabled="True" IsToggled="{Binding ON_OFF}" Margin="0,10,40,0" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="80" />
@@ -95,7 +96,7 @@
                         <TapGestureRecognizer Command="{Binding AddNumber}" CommandParameter="0"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="DEL" Grid.Row="3" Grid.Column="1" Padding="20,20" BackgroundColor="LightCoral" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
+                <Label Text="CAL" Grid.Row="4" Grid.Column="3" Padding="20,20" BackgroundColor="LightCoral" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding DelAllValue}" />
                     </Label.GestureRecognizers>
@@ -105,14 +106,19 @@
                         <TapGestureRecognizer Command="{Binding ReturnValue}"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="+/-" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="68,20" BackgroundColor="MistyRose" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
+                <Label Text="+/-" Grid.Row="4" Grid.Column="0"  Padding="20,20" BackgroundColor="MistyRose" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding AddNumber}" CommandParameter="-"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="." Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2" Padding="68,20" BackgroundColor="MistyRose" FontSize="Body"  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
+                <Label Text="." Grid.Row="4"  Grid.Column="2" Padding="20,20" BackgroundColor="MistyRose" FontSize="Body"  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding AddNumber}" CommandParameter="."/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="DEL" Grid.Row="4" Grid.Column="1" Padding="20,20" BackgroundColor="LightCoral" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackValue}" />
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>

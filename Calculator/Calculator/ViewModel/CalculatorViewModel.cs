@@ -28,6 +28,8 @@ namespace Calculator.ViewModel
         public ICommand Operator { private set; get; }
         public ICommand DelAllValue { private set; get; }
         public ICommand ReturnValue { private set; get; }
+        public ICommand BackValue { private set; get; }
+        public ICommand Start { private set; get; }
         public CalculatorViewModel()
         {
             ON_OFF = false;
@@ -39,8 +41,9 @@ namespace Calculator.ViewModel
             AddNumber = new Command(AddNumber1);
             DelAllValue = new Command(DelAllValue1);
             Operator = new Command(Operator1);
-
+            BackValue = new Command(BackValue1);
             ReturnValue = new Command(ReturnValue1);
+            Start = new Command(Start1);
         }
 
         private async void ReturnValue1(object obj)
@@ -169,6 +172,46 @@ namespace Calculator.ViewModel
 
         }
 
+        private async void Start1(object obj)
+        {
+            if (ON_OFF == true)
+            {
+                TXTBOX1 = "START";
+                await Task.Delay(1000);
+                Value = 0;
+                TXTBOX1 = "";
+                TXTBOX2 = "0";
+                Check = false;
+            }
+            else
+            {
+                TXTBOX2 = "Vui lòng bật máy";
+                await Task.Delay(1000);
+                TXTBOX2 = "0";
+            }
+
+        }
+
+        private async void BackValue1(object obj)
+        {
+            if (ON_OFF == true)
+                if(TXTBOX1.Length > 0)
+            {
+                TXTBOX1 = TXTBOX1.Substring(0,TXTBOX1.Length-1);
+/*                await Task.Delay(1000);
+                Value = 0;
+                TXTBOX1 = "";
+                TXTBOX2 = "0";
+                Check = false;*/
+            }
+            else
+            {
+                TXTBOX2 = "Vui lòng bật máy";
+                await Task.Delay(1000);
+                TXTBOX2 = "0";
+            }
+
+        }
         private async void AddNumber1(object obj)
         {
             if (ON_OFF == true)
